@@ -12,7 +12,7 @@ class OrderField(models.PositiveIntegerField):
             try:
                 qs = self.model.objects.all()
                 if self.for_fields:
-                    # filter by objects with the same field value
+                    # filter objects with the same field value
                     # for the field in 'for_fields'
                     query = {field: getattr(model_instance, field) \
                              for field in self.for_fields}
